@@ -4,6 +4,11 @@
 실행방법
 - python manage.py runserver만 치면 입장 가능
 
+주요 기능
+- 로그인 / 회원가입
+- 수다 게시판
+- 일정 보여주기
+
 사용패키지
 - Django
 -   Flask
