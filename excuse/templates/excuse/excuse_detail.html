@@ -20,10 +20,10 @@
         </div>
         <div class="my-3">
             {% if request.user == question.author %}
-            <a href="{% url 'excuse:question_modify' question.id  %}"
+            <a href="{% url 'excuse:excuse_modify' question.id  %}"
                class="btn btn-sm btn-outline-secondary">수정</a>
             <a href="javascript:void(0)" class="delete btn btn-sm btn-outline-secondary"
-       data-uri="{% url 'excuse:question_delete' question.id  %}">삭제</a>
+       data-uri="{% url 'excuse:excuse_delete' question.id  %}">삭제</a>
             {% endif %}
         </div>
     </div>
@@ -55,7 +55,7 @@
         </div>
     </div>
     {% endfor %}
-<form action="{% url 'excuse:answer_create' question.id %}" method="post" class="my-3">
+<form action="{% url 'excuse:board_create' question.id %}" method="post" class="my-3">
     {% csrf_token %}
     <!-- 오류표시 Start -->
         {% if form.errors %}
