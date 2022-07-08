@@ -1,0 +1,20 @@
+body{
+    background-color: #F9FBB2;
+}
+.container{
+    width: 600px;
+    position:absolute;
+    left:50%;
+    top:50%;
+    margin-left:-300px;
+    margin-top:-250px;
+
+}
+h2{
+    text-align: center;
+    margin-bottom: 70px;
+}
+button{
+    width: 575px;
+    margin:auto;
+}
