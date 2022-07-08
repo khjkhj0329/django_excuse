@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/create.css' %}">
 <div class="container">
-    <h5 class="my-3 border-bottom pb-2">질문등록</h5>
+    <h2>질문등록</h2>
     <form method="post">
         {% csrf_token %}
         <!-- 오류표시 Start -->
@@ -28,7 +30,7 @@
             <textarea class="form-control" name="content"
                       id="content" rows="10">{{ form.content.value|default_if_none:'' }}</textarea>
         </div>
-        <button type="submit" class="btn btn-primary">저장하기</button>
+        <button type="submit" class="btn btn-success">저장하기</button>
     </form>
 </div>
 {% endblock %}

@@ -1,14 +1,20 @@
 {% extends 'base.html' %}
 {% block content %}
     {% load pybo_filter %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/list.css' %}">
+<h2>수다 게시판</h2>
 <div class="container my-3">
+<a id="create" href="{% url 'excuse:question_create' %}" class="btn btn-success">
+    글 등록
+    </a>
     <table class="table">
         <thead>
-        <tr class="text-center table-dark">
+        <tr class="text-center table-white">
             <th>번호</th>
             <th style="width:50%">제목</th>
-            <th>글쓴이</th>
-            <th>작성일시</th>
+            <th>쓴 사람</th>
+            <th>작성날짜</th>
         </tr>
         </thead>
         <tbody>
@@ -49,7 +55,7 @@
         {% for page_number in question_list.paginator.page_range %}
         {% if page_number >= question_list.number|add:-5 and page_number <= question_list.number|add:5 %}
         {% if page_number == question_list.number %}
-        <li class="page-item active" aria-current="page">
+        <li class="page-item" style="background-color: green" aria-current="page">
             <a class="page-link" href="?page={{ page_number }}">{{ page_number }}</a>
         </li>
         {% else %}
@@ -71,10 +77,5 @@
         {% endif %}
     </ul>
     <!-- 페이징처리 끝 -->
-
-
-    <a href="{% url 'excuse:question_create' %}" class="btn btn-primary">
-    질문등록하기
-    </a>
 </div>
 {% endblock %}

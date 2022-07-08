@@ -1,10 +1,10 @@
 from django import forms
-from .models import Question, Answer
+from .models import Excuse, Board
 
 
 class QuestionForm(forms.ModelForm):
     class Meta:
-        model = Question  # 사용할 모델
+        model = Excuse  # 사용할 모델
         fields = ['subject', 'content']  # QuestionForm에서 사용할 Question 모델의 속성
         widgets = {
             'subject': forms.TextInput(attrs={'class': 'form-control'}),
@@ -17,7 +17,7 @@ class QuestionForm(forms.ModelForm):
 
 class AnswerForm(forms.ModelForm):
     class Meta:
-        model = Answer
+        model = Board
         fields = ['content']
         labels = {
             'content': '답변내용',

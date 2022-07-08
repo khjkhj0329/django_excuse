@@ -6,11 +6,12 @@ app_name = 'excuse'
 
 urlpatterns = [
     path('', views.index, name='index'),
+    path('index/', views.index, name='index'),
     path('<int:question_id>/', views.detail, name='detail'),
-    path('answer/create/<int:question_id>/', views.answer_create, name='answer_create'),
-    path('question/create/', views.question_create, name='question_create'),
-    path('question/modify/<int:question_id>/', views.question_modify, name='question_modify'),
-    path('question/delete/<int:question_id>/', views.question_delete, name='question_delete'),
-    path('answer/modify/<int:answer_id>/', views.answer_modify, name='answer_modify'),
-    path('answer/delete/<int:answer_id>/', views.answer_delete, name='answer_delete'),
+    path('board/create/<int:question_id>/', views.board_create, name='board_create'),
+    path('excuse/create/', views.excuse_create, name='question_create'),
+    path('excuse/modify/<int:question_id>/', views.excuse_modify, name='excuse_modify'),
+    path('excuse/delete/<int:question_id>/', views.excuse_delete, name='excuse_delete'),
+    path('board/modify/<int:answer_id>/', views.board_modify, name='board_modify'),
+    path('board/delete/<int:answer_id>/', views.board_delete, name='board_delete'),
 ]
